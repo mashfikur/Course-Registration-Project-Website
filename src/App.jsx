@@ -9,7 +9,7 @@ function App() {
         Course Registration
       </h1>
 
-      <div className="container mx-auto flex justify-between">
+      <div className="container my-10 mx-auto flex justify-between">
         <Courses></Courses>
         <Sidebar></Sidebar>
       </div>

@@ -10,7 +10,7 @@
     {
       "id": 2,
       "course_name": "Introduction to Algorithms",
-      "course_details": "Algorithms are the heart of computing. Learning and implementing algorithms efficiently can significantly improve problem-solving skills and optimize software performance.",
+      "course_details": "Algorithms are the heart of computing. Learning and implementing algorithms efficiently can significantly improve problem-solving skills and optimize ",
       "course_img": "https://i.ibb.co/hRn127B/course-4.png",
       "credit_hour": 4,
       "price": 24900
@@ -18,7 +18,7 @@
     {
       "id": 3,
       "course_name": "Introduction to C++ for DSA",
-      "course_details": "When diving into C++, one can't help but be captivated by its powerful object-oriented programming features. Classes, inheritance, and polymorphism are key aspects that make C++ a versatile language.",
+      "course_details": "When diving into C++, one can't help but be captivated by its powerful object-oriented programming features. Classes, inheritance, and polymorphism are key aspects that make C++ a versatile language. Classes, inheritance, and polymorphism are key aspects that make important",
       "course_img": "https://i.ibb.co/sjKb0FY/course-5.png",
       "credit_hour": 2,
       "price": 29900
@@ -26,7 +26,7 @@
     {
       "id": 4,
       "course_name": "Basic Data Structures",
-      "course_details": " Data structures like arrays, linked lists, stacks, and queues form the bedrock of computer science. These structures are essential for organizing and managing data efficiently, whether it's for sorting, searching, or optimizing memory usage. By mastering the fundamentals of data structures, you'll unlock the power to solve a wide range of computational problems and lay a solid foundation ",
+      "course_details": " Data structures like arrays, linked lists, stacks, and queues form the bedrock of computer science. These structures are essential for organizing and managing data efficiently, whether it's for sorting, searching, or optimizing memory usage. ",
       "course_img": "https://i.ibb.co/jT8fTQX/course-8.png",
       "credit_hour": 3,
       "price": 19900
