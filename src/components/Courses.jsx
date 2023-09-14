@@ -12,7 +12,9 @@ const Courses = () => {
 
   return (
     <div className="w-3/4">
-      <Course></Course>
+      {courses.map((course) => (
+        <Course key={course.id} course={course}></Course>
+      ))}
     </div>
   );
 };
