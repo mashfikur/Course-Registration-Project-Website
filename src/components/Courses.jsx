@@ -1,7 +1,9 @@
+import Course from "./Course";
+
 const Courses = () => {
   return (
-    <div className="w-3/4" >
-      <h3>Courses</h3>
+    <div className="w-3/4">
+      <Course></Course>
     </div>
   );
 };
