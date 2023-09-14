@@ -1,0 +1,75 @@
+[
+    {
+      "id": 1,
+      "course_name": "Introduction to C Programming",
+      "course_details": "A well-known fact that C programming lays the foundation for many other programming languages. Understanding pointers, data types, and memory management is crucial for building robust software.",
+      "course_img": "https://i.ibb.co/cbVNFzg/course-3.png",
+      "credit_hour": 3,
+      "price": 19900
+    },
+    {
+      "id": 2,
+      "course_name": "Introduction to Algorithms",
+      "course_details": "Algorithms are the heart of computing. Learning and implementing algorithms efficiently can significantly improve problem-solving skills and optimize software performance.",
+      "course_img": "https://i.ibb.co/hRn127B/course-4.png",
+      "credit_hour": 4,
+      "price": 24900
+    },
+    {
+      "id": 3,
+      "course_name": "Introduction to C++ for DSA",
+      "course_details": "When diving into C++, one can't help but be captivated by its powerful object-oriented programming features. Classes, inheritance, and polymorphism are key aspects that make C++ a versatile language.",
+      "course_img": "https://i.ibb.co/sjKb0FY/course-5.png",
+      "credit_hour": 2,
+      "price": 29900
+    },
+    {
+      "id": 4,
+      "course_name": "Basic Data Structures",
+      "course_details": " Data structures like arrays, linked lists, stacks, and queues form the bedrock of computer science. These structures are essential for organizing and managing data efficiently, whether it's for sorting, searching, or optimizing memory usage. By mastering the fundamentals of data structures, you'll unlock the power to solve a wide range of computational problems and lay a solid foundation ",
+      "course_img": "https://i.ibb.co/jT8fTQX/course-8.png",
+      "credit_hour": 3,
+      "price": 19900
+    },
+    {
+      "id": 5,
+      "course_name": "Introduction to OOP Python",
+      "course_details": "Python's readability and ease of use have made it a favorite among programmers. From web development to data analysis, Python's versatility shines through in various domains.",
+      "course_img": "https://i.ibb.co/8zc09d1/course-1.png",
+      "credit_hour": 4,
+      "price": 24900
+    },
+    {
+      "id": 6,
+      "course_name": "Artificial Intelligence Basics",
+      "course_details": "AI is a paradigm that transcends languages. Encapsulation, inheritance, and abstraction are the building blocks for designing modular and maintainable code.",
+      "course_img": "https://i.ibb.co/jw4By2v/course-6.png",
+      "credit_hour": 5,
+      "price": 29900
+    },
+    {
+      "id": 7,
+      "course_name": "AWS, Cloud Computing",
+      "course_details": "Amazon Web Services (AWS) offers a plethora of cloud services. Learning how to leverage AWS can empower developers to build scalable and cost-effective solutions.",
+      "course_img": "https://i.ibb.co/RQsgjd7/course-9.png",
+      "credit_hour": 3,
+      "price": 19900
+    },
+    {
+      "id": 8,
+      "course_name": "Database (MySQL)",
+      "course_details": "Databases are the backbone of modern applications. Understanding how to design and manage databases is essential for data-driven applications.",
+      "course_img": "https://i.ibb.co/Xz9vPy9/course-2.png",
+      "credit_hour": 4,
+      "price": 24900
+    },
+    {
+      "id": 9,
+      "course_name": "Problem-Solving Part",
+      "course_details": "Problem-solving is a fundamental skill in the world of programming. Whether it's competitive coding challenges or real-world software bugs, the ability to analyze, devise solutions, and implement them efficiently is a hallmark of a great programmer.",
+      "course_img": "https://i.ibb.co/pLYtXq1/course-7.png",
+      "credit_hour": 5,
+      "price": 29900
+    }
+  ]
+  
