@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./App.css";
 import Courses from "./components/Courses";
 import Sidebar from "./components/Sidebar";
@@ -6,14 +6,12 @@ import toast from "react-hot-toast";
 
 function App() {
   const [courseList, setCourseList] = useState([]);
-  const [creditHour, setCreditHour] = useState(0);
-  const [remainingCreditHour, setremainingCreditHour] = useState(20);
-  const [totalPrice, setTotalPrice] = useState(0);
   const [error, setError] = useState(0);
 
   const alreadyTaken = [];
   const newCourseList = [];
   let creditCount = 0;
+
   const handleSelect = (course) => {
     const newArray = [...courseList, course];
     newArray.map((course) => {
@@ -30,17 +28,6 @@ function App() {
         setError((error) => error + 1);
       }
     });
-
-    const credit = course.credit_hour;
-    const totalCredit = credit + creditHour;
-    setCreditHour(totalCredit);
-
-    const remainigCredit = remainingCreditHour - credit;
-
-    setremainingCreditHour(remainigCredit);
-
-    const newTotalPrice = totalPrice + course.price;
-    setTotalPrice(newTotalPrice);
   };
 
   newCourseList.map((course) => console.log(course.credit_hour));
@@ -53,13 +40,7 @@ function App() {
 
       <div className="container my-10 mx-auto flex justify-between">
         <Courses handleSelect={handleSelect}></Courses>
-        <Sidebar
-          courseList={courseList}
-          creditHour={creditHour}
-          remainingCreditHour={remainingCreditHour}
-          totalPrice={totalPrice}
-          error={error}
-        ></Sidebar>
+        <Sidebar courseList={courseList} error={error}></Sidebar>
       </div>
     </div>
   );

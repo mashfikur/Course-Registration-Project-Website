@@ -21,7 +21,7 @@ const Sidebar = ({ courseList, error }) => {
     }
   });
 
-  const [lastCreditAmount, setLastCrAmount] = useState(0);
+  const [lastCreditAmount, setLastCreditAmount] = useState(0);
   const [lastReaminingCreditAmount, setLastRemainingCrAmount] = useState(0);
 
   useEffect(() => {
@@ -32,7 +32,7 @@ const Sidebar = ({ courseList, error }) => {
 
   useEffect(() => {
     if (displayTotalCredit <= 20) {
-      setLastCrAmount(displayTotalCredit);
+      setLastCreditAmount(displayTotalCredit);
     }
   }, [displayTotalCredit]);
 
@@ -45,11 +45,12 @@ const Sidebar = ({ courseList, error }) => {
           : lastReaminingCreditAmount}
         hr
       </h3>
+
       <Toaster></Toaster>
+
       <hr />
 
       <h3 className=" text-[1.25rem] font-bold">Course Name</h3>
-
       <div>
         <ol className="list-decimal ml-4 text-[#1c1b1b99]">
           {courseList.map((course, idx) => {
@@ -74,9 +75,6 @@ const Sidebar = ({ courseList, error }) => {
 
 Sidebar.propTypes = {
   courseList: PropTypes.array,
-  creditHour: PropTypes.number,
-  remainingCreditHour: PropTypes.number,
-  totalPrice: PropTypes.number,
   error: PropTypes.number,
 };
 
