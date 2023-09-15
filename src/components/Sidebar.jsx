@@ -2,41 +2,49 @@ import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 
-const Sidebar = ({
-  courseList,
-  creditHour,
-  remainingCreditHour,
-  totalPrice,
-  error,
-}) => {
+const Sidebar = ({ courseList, error }) => {
   useEffect(() => {
     if (error) {
       toast.error("Course Already Taken");
     }
   }, [error]);
 
-  const [lastAmount, setLastAmount] = useState(creditHour);
-  useEffect(() => {
-    if (creditHour > 20) {
-      setLastAmount(20);
-    } else {
-      setLastAmount(creditHour);
-    }
-  }, [creditHour]);
-
   let displayTotalCredit = 0;
+  let displayRemainingCredit = 20;
+  let dislayTotalPrice = 0;
+  let courseTitleList = [];
+
   courseList.map((course) => {
     displayTotalCredit += course.credit_hour;
-    console.log(displayTotalCredit);
+    displayRemainingCredit -= course.credit_hour;
+    if (displayTotalCredit <= 20) {
+      dislayTotalPrice += course.price;
+    }
   });
+
+  const [lastCreditAmount, setLastCrAmount] = useState(0);
+  const [lastReaminingCreditAmount, setLastRemainingCrAmount] = useState(0);
+
+  useEffect(() => {
+    if (displayRemainingCredit >= 0) {
+      setLastRemainingCrAmount(displayRemainingCredit);
+    }
+  }, [displayRemainingCredit]);
+
+  useEffect(() => {
+    if (displayTotalCredit <= 20) {
+      setLastCrAmount(displayTotalCredit);
+    }
+  }, [displayTotalCredit]);
 
   return (
     <div className="w-1/4 bg-white h-full p-6 rounded-lg space-y-4 sticky top-2">
       <h3 className="text-[#2F80ED] text-[1.125rem] font-bold">
         Credit Hour Remaining{" "}
-        {remainingCreditHour >= 0
-          ? remainingCreditHour
-          : toast.error("Credit Hour Limit Exceeded") && 0}
+        {displayRemainingCredit >= 0
+          ? displayRemainingCredit
+          : toast.error("Credit Hour Limit Exceeded") &&
+            lastReaminingCreditAmount}
         hr
       </h3>
       <Toaster></Toaster>
@@ -47,16 +55,21 @@ const Sidebar = ({
       <div>
         <ol className="list-decimal ml-4 text-[#1c1b1b99]">
           {courseList.map((course, idx) => {
-            return <li key={idx}> {course.course_name} </li>;
+            if (displayTotalCredit <= 20) {
+              return <li key={idx}> {course.course_name} </li>;
+            }
           })}
         </ol>
       </div>
 
       <hr />
 
-      <h4 className="font-medium">Total Credit Hour : {displayTotalCredit} </h4>
+      <h4 className="font-medium">
+        Total Credit Hour :{" "}
+        {displayTotalCredit <= 20 ? displayTotalCredit : lastCreditAmount}{" "}
+      </h4>
       <hr />
-      <h4 className="font-semibold">Total Price : {totalPrice} USD </h4>
+      <h4 className="font-semibold">Total Price : {dislayTotalPrice} USD </h4>
     </div>
   );
 };

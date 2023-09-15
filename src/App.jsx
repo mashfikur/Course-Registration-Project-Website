@@ -12,7 +12,6 @@ function App() {
 
   const alreadyTaken = [];
   const newCourseList = [];
-
   const handleSelect = (course) => {
     const newArray = [...courseList, course];
     newArray.map((course) => {
@@ -25,7 +24,6 @@ function App() {
       }
     });
 
-    courseList.map((course) => console.log(course.credit_hour));
     const credit = course.credit_hour;
     const totalCredit = credit + creditHour;
     setCreditHour(totalCredit);
