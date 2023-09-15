@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import Courses from "./components/Courses";
 import Sidebar from "./components/Sidebar";
@@ -19,13 +19,13 @@ function App() {
       if (!alreadyTaken.includes(course.id)) {
         newCourseList.push(course);
         alreadyTaken.push(course.id);
+        setCourseList(newCourseList);
       } else {
         setError((error) => error + 1);
       }
     });
 
-    setCourseList(newCourseList);
-
+    courseList.map((course) => console.log(course.credit_hour));
     const credit = course.credit_hour;
     const totalCredit = credit + creditHour;
     setCreditHour(totalCredit);
@@ -37,6 +37,8 @@ function App() {
     const newTotalPrice = totalPrice + course.price;
     setTotalPrice(newTotalPrice);
   };
+
+  newCourseList.map((course) => console.log(course.credit_hour));
 
   return (
     <div>

@@ -10,7 +10,7 @@ const Sidebar = ({
   error,
 }) => {
   useEffect(() => {
-    if (error > 0) {
+    if (error) {
       toast.error("Course Already Taken");
     }
   }, [error]);
@@ -23,6 +23,12 @@ const Sidebar = ({
       setLastAmount(creditHour);
     }
   }, [creditHour]);
+
+  let displayTotalCredit = 0;
+  courseList.map((course) => {
+    displayTotalCredit += course.credit_hour;
+    console.log(displayTotalCredit);
+  });
 
   return (
     <div className="w-1/4 bg-white h-full p-6 rounded-lg space-y-4 sticky top-2">
@@ -48,7 +54,7 @@ const Sidebar = ({
 
       <hr />
 
-      <h4 className="font-medium">Total Credit Hour : {lastAmount} </h4>
+      <h4 className="font-medium">Total Credit Hour : {displayTotalCredit} </h4>
       <hr />
       <h4 className="font-semibold">Total Price : {totalPrice} USD </h4>
     </div>
