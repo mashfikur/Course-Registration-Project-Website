@@ -4,14 +4,27 @@ import Courses from "./components/Courses";
 import Sidebar from "./components/Sidebar";
 
 function App() {
-  const [courseTitle, setCourseTitle] = useState([]);
+  const [courseList, setCourseList] = useState([]);
   const [creditHour, setCreditHour] = useState(0);
   const [remainingCreditHour, setremainingCreditHour] = useState(20);
+  const [totalPrice, setTotalPrice] = useState(0);
+  const [error, setError] = useState(0);
+
+  const alreadyTaken = [];
+  const newCourseList = [];
 
   const handleSelect = (course) => {
-    const newArray = [...courseTitle, course];
+    const newArray = [...courseList, course];
+    newArray.map((course) => {
+      if (!alreadyTaken.includes(course.id)) {
+        newCourseList.push(course);
+        alreadyTaken.push(course.id);
+      } else {
+        setError((error) => error + 1);
+      }
+    });
 
-    setCourseTitle(newArray);
+    setCourseList(newCourseList);
 
     const credit = course.credit_hour;
     const totalCredit = credit + creditHour;
@@ -20,6 +33,9 @@ function App() {
     const remainigCredit = remainingCreditHour - credit;
 
     setremainingCreditHour(remainigCredit);
+
+    const newTotalPrice = totalPrice + course.price;
+    setTotalPrice(newTotalPrice);
   };
 
   return (
@@ -31,9 +47,11 @@ function App() {
       <div className="container my-10 mx-auto flex justify-between">
         <Courses handleSelect={handleSelect}></Courses>
         <Sidebar
-          courseTitle={courseTitle}
+          courseList={courseList}
           creditHour={creditHour}
           remainingCreditHour={remainingCreditHour}
+          totalPrice={totalPrice}
+          error={error}
         ></Sidebar>
       </div>
     </div>
