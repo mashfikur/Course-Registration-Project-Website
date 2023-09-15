@@ -12,7 +12,6 @@ const Sidebar = ({ courseList, error }) => {
   let displayTotalCredit = 0;
   let displayRemainingCredit = 20;
   let dislayTotalPrice = 0;
-  let courseTitleList = [];
 
   courseList.map((course) => {
     displayTotalCredit += course.credit_hour;
@@ -43,8 +42,7 @@ const Sidebar = ({ courseList, error }) => {
         Credit Hour Remaining{" "}
         {displayRemainingCredit >= 0
           ? displayRemainingCredit
-          : toast.error("Credit Hour Limit Exceeded") &&
-            lastReaminingCreditAmount}
+          : lastReaminingCreditAmount}
         hr
       </h3>
       <Toaster></Toaster>

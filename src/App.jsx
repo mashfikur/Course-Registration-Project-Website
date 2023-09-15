@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import Courses from "./components/Courses";
 import Sidebar from "./components/Sidebar";
+import toast from "react-hot-toast";
 
 function App() {
   const [courseList, setCourseList] = useState([]);
@@ -12,11 +13,17 @@ function App() {
 
   const alreadyTaken = [];
   const newCourseList = [];
+  let creditCount = 0;
   const handleSelect = (course) => {
     const newArray = [...courseList, course];
     newArray.map((course) => {
       if (!alreadyTaken.includes(course.id)) {
-        newCourseList.push(course);
+        creditCount += course.credit_hour;
+        if (creditCount <= 20) {
+          newCourseList.push(course);
+        } else {
+          toast.error("Credit Hour Limit Exceeded");
+        }
         alreadyTaken.push(course.id);
         setCourseList(newCourseList);
       } else {
